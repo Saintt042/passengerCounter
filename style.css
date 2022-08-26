@@ -36,6 +36,10 @@ button{
     margin-bottom: 5px;
     border-radius: 5px;
 }
+button:hover{
+    transform: scale(1.2);
+    transition: .4s;
+}
 
 #increment-btn{
     background: darkred;
