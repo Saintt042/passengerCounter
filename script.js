@@ -23,7 +23,7 @@ function save() {
     countdown.textContent = 0;
     // after save sets back to 0
     countDown = 0;
-    
+    alert("Proceed to save?");
     
 }
 save()
