@@ -1,19 +1,29 @@
-//document.getElementById("countDown").innerText = 5
-// let firstBatch = 5;
-// let secondBatch = 7;
-// let count = 0;
-// console.log(count);
-// let myAge = 10;
-// let humanDogRatio = 7;
+let saveEl = document.getElementById("save-el")
+let countdown = document.getElementById("countDown") //.innerText = 5;
+let dateRe = document.getElementById("demo")
+let countDown = 0;
 
-// let myDogAge = myAge * humanDogRatio;
-// console.log(myDogAge);
+ console.log(saveEl);
 
-let bonusPoints = 50;
+function increment() {
+   countDown += 1
+   //simply means countDown = countDown + 1
+   countdown.textContent = countDown;
+   
+}
+increment()
 
-bonusPoints = bonusPoints * 2;
-console.log(bonusPoints)
-bonusPoints = bonusPoints / 2;
-console.log(bonusPoints)
-bonusPoints = bonusPoints + 20;
-console.log(bonusPoints)
+
+function save() {
+    const d = new Date();
+    dateRe.innerHTML = d;
+    let countStr = countDown + " - " + d
+    //always use .textContent to align properly
+    saveEl.textContent += countStr
+    countdown.textContent = 0;
+    // after save sets back to 0
+    countDown = 0;
+    
+    
+}
+save()
