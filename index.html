@@ -16,14 +16,17 @@
     <title>Passenger counter</title>
 </head>
 <body>
-   <div class="container">
+    <div class="counter">
     <h1>Counter-App</h1>
-    <h2 id="countDown">0</h2>
-    <button id="increment-btn" onclick="increment()">INCREMENT</button>
-    <button id="save-btn" onclick="save()">SAVE</button>
+    <span id="value">0</span>
+    <div class="buttons-container">
+            <button id="add" class="btn increase">Increase</button>
+            <button id="minus" class="btn decrease">Decrease</button>
+            <button id="reset" class="btn reset">Reset</button>
+            <button id="save-btn" onclick="save()">SAVE</button>
+    </div>
+</div>
     <p id="save-el">Previous entries: </p>
     <p id="demo"></p>
-   </div>
-
 </body>
 </html>

@@ -1,29 +1,40 @@
-let saveEl = document.getElementById("save-el")
-let countdown = document.getElementById("countDown") //.innerText = 5;
-let dateRe = document.getElementById("demo")
-let countDown = 0;
+const value = document.querySelector("#value");
+const btns = document.querySelectorAll(".btn");
+let saveEl = document.getElementById("save-el");
+let dateRe = document.getElementById("demo");
+let count = 0;
 
- console.log(saveEl);
+btns.forEach(function(btn){
+    btn.addEventListener("click", function(whichBtn){
+        const styles = whichBtn.currentTarget.classList;
+        if(styles.contains("decrease")){
+            count--;
+        } else if(styles.contains("increase")){
+            count++;
+        } else if(styles.contains("reset")){
+            count = 0;
+        }
 
-function increment() {
-   countDown += 1
-   //simply means countDown = countDown + 1
-   countdown.textContent = countDown;
-   
-}
-increment()
+        if(count < 0){
+            document.getElementById("value").style.color = "red";
+        } else if(count > 0){
+            document.getElementById("value").style.color = "green";
+        } else{
+            document.getElementById("value").style.color = "lightblue";
+        }
+
+        value.textContent = count;
+    });    
+});
 
 
 function save() {
     const d = new Date();
     dateRe.innerHTML = d;
-    let countStr = countDown + " - " + d
-    //always use .textContent to align properly
+    let countStr = count + " - " + d
     saveEl.textContent += countStr
-    countdown.textContent = 0;
+    value.textContent = 0;
     // after save sets back to 0
-    countDown = 0;
-    alert("Proceed to save?");
-    
+    value = 0;    
 }
 save()
